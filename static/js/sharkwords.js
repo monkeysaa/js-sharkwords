@@ -1,3 +1,5 @@
+'use strict';
+
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 const WORDS = [
   'strawberry',
@@ -21,7 +23,7 @@ console.log("Loaded Sharkwords.js");
 //
 const createDivsForChars = (word) => {
   for (const char of word) {
-    console.log(char);
+    // console.log(char); Option to prove this is working
     $('#word-container').append(`<div class="letter-box ${char}"></div>`);
   }
 };
@@ -40,19 +42,19 @@ const generateLetterButtons = () => {
 //
 const disableLetterButton = (buttonEl) => {
   const button = $(buttonEl);  // Now `button` is a jQuery object!
-  button.disabled = true;
+  button.attr('disabled', true);
 };
 
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+  return $(`div.${letter}[0] !== undefined`);
 };
 
 // Called when `letter` is in word. Update contents of divs with `letter`.
 //
 const handleCorrectGuess = (letter) => {
-  // Replace this with your code
+  // $(`div.${letter}.innerText(${letter})`);
 };
 
 // Called when `letter` is not in word.
