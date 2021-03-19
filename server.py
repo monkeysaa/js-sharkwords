@@ -10,6 +10,11 @@ def homepage():
     return render_template("index.html")
 
 
+@app.route("/class")
+def class_demo():
+    return render_template("index2.html")
+
+
 @app.route("/demo")
 def demo():
     return render_template("demo.html")
